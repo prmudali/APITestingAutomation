@@ -1,57 +1,14 @@
 {
 	"info": {
-		"_postman_id": "f99b2207-a305-48e4-bd6a-948d0cb8728e",
-		"name": "APITesting",
+		"_postman_id": "83d352d9-cabe-4d25-aff3-d17652e2309b",
+		"name": "Collection1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "1467756",
-		"_collection_link": "https://galactic-zodiac-495810.postman.co/workspace/CNATSSep2025~e8e6825a-172f-43c6-be87-e9069ef3e06a/collection/1467756-f99b2207-a305-48e4-bd6a-948d0cb8728e?action=share&source=collection_link&creator=1467756"
+		"_exporter_id": "48492169",
+		"_collection_link": "https://prmudali-7432797.postman.co/workspace/CNATS-API-Testing~0402577c-2ed2-4d88-a7f0-8de6fa169261/collection/48492169-83d352d9-cabe-4d25-aff3-d17652e2309b?action=share&source=collection_link&creator=48492169"
 	},
 	"item": [
 		{
-			"name": "Prod20",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Body matches string\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Mirror\");\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Check JSON Data\", function () {\r",
-							"    var jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData.id).to.eql(15);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Content-Type is present\", function () {\r",
-							"    pm.response.to.have.header(\"Content-Type\");\r",
-							"});\r",
-							"\r",
-							"let jsonData = pm.response.json();\r",
-							"// Check if any review has rating 5\r",
-							"let hasFiveStar = jsonData.reviews.some(review => review.rating === 5);\r",
-							"// Check if any review has rating 5\r",
-							"let hasPleasedComment = jsonData.reviews.some(review =>\r",
-							"    review.comment.toLowerCase().includes(\"pleased\"));\r",
-							"\r",
-							"pm.test(\"At least one review has a rating of 5\", function () {\r",
-							"    pm.expect(hasFiveStar).to.be.true;\r",
-							"});\r",
-							"\r",
-							"pm.test(\"At least one review comment contains the word 'Pleased'\", function () {\r",
-							"    pm.expect(hasPleasedComment).to.be.true;\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
+			"name": "Get Request1",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -71,7 +28,7 @@
 			"response": []
 		},
 		{
-			"name": "ProdSearch",
+			"name": "Get request2",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -97,7 +54,34 @@
 			"response": []
 		},
 		{
-			"name": "AddProd",
+			"name": "Get Request3",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Request1a",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/products",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post1",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -106,7 +90,7 @@
 					"raw": "{\r\n    \"title\": \"My own product\",\r\n    \"description\": \"This is the description of my product.\",\r\n    \"category\": \"furniture\",\r\n    \"price\": 4.99,\r\n    \"discountPercentage\": 9.33,\r\n    \"rating\": 5.0\r\n}\r\n",
 					"options": {
 						"raw": {
-							"language": "json"
+							"language": "text"
 						}
 					}
 				},
@@ -126,7 +110,7 @@
 			"response": []
 		},
 		{
-			"name": "PutReq",
+			"name": "Put1",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -155,26 +139,10 @@
 			"response": []
 		},
 		{
-			"name": "DelRec",
+			"name": "New Request",
 			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Smitha Product\"\r\n}\r\n"
-				},
-				"url": {
-					"raw": "https://dummyjson.com/products/20",
-					"protocol": "https",
-					"host": [
-						"dummyjson",
-						"com"
-					],
-					"path": [
-						"products",
-						"20"
-					]
-				}
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
